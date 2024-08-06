@@ -7,6 +7,7 @@ import asyncio
 from gtts import gTTS
 import os
 
+
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("!") and "@", intents=nextcord.Intents.all())
                 #  command_prefix 란 시작할 명령어
 
@@ -38,6 +39,8 @@ async def delete_messages(ctx, num: int):
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
+
+access_token = os.ebviron["BOT_TOKEN"]
 
 async def main():
     async with bot:
@@ -202,4 +205,4 @@ intents.message_content = True
 bot.add_cog(Music(bot))
 
 
-bot.run("MTI2OTgwMzE1ODk3MzE4NjE2Mg.GV1zO6.QxRilEsHZU8vi1GuEFxZxf_U80Pt5B0P6ye120") #토큰
+bot.run("access_token") #토큰
